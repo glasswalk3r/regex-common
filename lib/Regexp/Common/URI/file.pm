@@ -1,11 +1,9 @@
 package Regexp::Common::URI::file;
-
+use strict;
+use warnings;
 use Regexp::Common               qw /pattern clean no_defaults/;
 use Regexp::Common::URI          qw /register_uri/;
 use Regexp::Common::URI::RFC1738 qw /$host $fpath/;
-
-use strict;
-use warnings;
 
 # VERSION
 

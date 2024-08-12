@@ -1,12 +1,10 @@
 package Regexp::Common::URI::news;
-
+use strict;
+use warnings;
 use Regexp::Common               qw /pattern clean no_defaults/;
 use Regexp::Common::URI          qw /register_uri/;
 use Regexp::Common::URI::RFC1738 qw /$grouppart $group $article
   $host $port $digits/;
-
-use strict;
-use warnings;
 
 # VERSION
 

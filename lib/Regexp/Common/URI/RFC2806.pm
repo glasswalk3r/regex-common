@@ -1,10 +1,8 @@
 package Regexp::Common::URI::RFC2806;
-
-use Regexp::Common::URI::RFC1035 qw /$domain/;
-use Regexp::Common::URI::RFC2396 qw /$unreserved $escaped $hex/;
-
 use strict;
 use warnings;
+use Regexp::Common::URI::RFC1035 qw /$domain/;
+use Regexp::Common::URI::RFC2396 qw /$unreserved $escaped $hex/;
 
 # VERSION
 

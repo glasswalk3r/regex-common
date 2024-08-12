@@ -1,12 +1,10 @@
 package Regexp::Common::URI::fax;
-
+use strict;
+use warnings;
 use Regexp::Common               qw /pattern clean no_defaults/;
 use Regexp::Common::URI          qw /register_uri/;
 use Regexp::Common::URI::RFC2806 qw /$fax_subscriber
   $fax_subscriber_no_future/;
-
-use strict;
-use warnings;
 
 # VERSION
 

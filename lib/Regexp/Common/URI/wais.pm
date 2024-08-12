@@ -1,12 +1,10 @@
 package Regexp::Common::URI::wais;
-
+use strict;
+use warnings;
 use Regexp::Common               qw /pattern clean no_defaults/;
 use Regexp::Common::URI          qw /register_uri/;
 use Regexp::Common::URI::RFC1738 qw /$host $port
   $search $database $wtype $wpath/;
-
-use strict;
-use warnings;
 
 # VERSION
 

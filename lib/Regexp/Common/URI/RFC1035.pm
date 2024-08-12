@@ -1,9 +1,7 @@
 package Regexp::Common::URI::RFC1035;
-
-use Regexp::Common qw /pattern clean no_defaults/;
-
 use strict;
 use warnings;
+use Regexp::Common qw /pattern clean no_defaults/;
 
 # VERSION
 

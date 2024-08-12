@@ -1,12 +1,10 @@
 package Regexp::Common::URI::gopher;
-
+use strict;
+use warnings;
 use Regexp::Common               qw /pattern clean no_defaults/;
 use Regexp::Common::URI          qw /register_uri/;
 use Regexp::Common::URI::RFC1738 qw /$host $port $uchars/;
 use Regexp::Common::URI::RFC1808 qw /$pchars $pchar_range/;
-
-use strict;
-use warnings;
 
 # VERSION
 

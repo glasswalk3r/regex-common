@@ -1,14 +1,9 @@
-# TV URLs.
-# Internet draft: draft-zigmond-tv-url-03.txt
-
 package Regexp::Common::URI::tv;
-
+use strict;
+use warnings;
 use Regexp::Common               qw /pattern clean no_defaults/;
 use Regexp::Common::URI          qw /register_uri/;
 use Regexp::Common::URI::RFC2396 qw /$hostname/;
-
-use strict;
-use warnings;
 
 # VERSION
 

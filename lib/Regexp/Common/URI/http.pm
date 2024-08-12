@@ -1,11 +1,9 @@
 package Regexp::Common::URI::http;
-
+use strict;
+use warnings;
 use Regexp::Common               qw /pattern clean no_defaults/;
 use Regexp::Common::URI          qw /register_uri/;
 use Regexp::Common::URI::RFC2396 qw /$host $port $path_segments $query/;
-
-use strict;
-use warnings;
 
 # VERSION
 

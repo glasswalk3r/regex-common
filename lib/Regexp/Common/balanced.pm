@@ -1,8 +1,5 @@
 package Regexp::Common::balanced;
 {
-
-    use 5.10.0;
-
     use strict;
     use warnings;
     no warnings 'syntax';

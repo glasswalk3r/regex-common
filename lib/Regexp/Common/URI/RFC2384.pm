@@ -1,10 +1,8 @@
 package Regexp::Common::URI::RFC2384;
-
-use Regexp::Common               qw /pattern clean no_defaults/;
-use Regexp::Common::URI::RFC1738 qw /$unreserved_range $escape $hostport/;
-
 use strict;
 use warnings;
+use Regexp::Common               qw /pattern clean no_defaults/;
+use Regexp::Common::URI::RFC1738 qw /$unreserved_range $escape $hostport/;
 
 # VERSION
 
