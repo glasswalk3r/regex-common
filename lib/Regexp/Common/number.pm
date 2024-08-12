@@ -1,10 +1,10 @@
-package Regexp::Common::number;
+package Regex::Common::number;
 use strict;
 use warnings;
 no warnings 'syntax';
 
 use Config;
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -177,11 +177,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::number -- provide regexes for numbers
+Regex::Common::number -- provide regexes for numbers
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /number/;
+    use Regex::Common qw /number/;
 
     while (<>) {
         /^$RE{num}{int}$/                and  print "Integer\n";
@@ -192,10 +192,10 @@ Regexp::Common::number -- provide regexes for numbers
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 =head2 C<$RE{num}{int}{-base}{-sep}{-group}{-places}{-sign}>
 
@@ -234,7 +234,7 @@ For example:
  $RE{num}{int}{-sep=>',?'}              # match 1234567 or 1,234,567
  $RE{num}{int}{-sep=>'.'}{-group=>4}    # match 1.2345.6789
 
-Under C<-keep> (see L<Regexp::Common>):
+Under C<-keep> (see L<Regex::Common>):
 
 =over 4
 
@@ -423,7 +423,7 @@ arithmetic is lossy when using integers over about 53 bits, this pattern
 only recognizes numbers less than 9000000000000000, if one uses a
 Perl that is configured to use 64 bit integers. Otherwise, the limit
 is 2147483647. These restrictions were introduced in versions 2.116
-and 2.117 of Regexp::Common. Regardless whether C<-keep> was set,
+and 2.117 of Regex::Common. Regardless whether C<-keep> was set,
 the matched number will be returned in C<$1>.
 
 =head2 C<$RE{num}{roman}>
@@ -449,7 +449,7 @@ Under C<-keep>, the number will be captured in $1.
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -475,7 +475,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

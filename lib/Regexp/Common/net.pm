@@ -1,9 +1,9 @@
-package Regexp::Common::net;
+package Regex::Common::net;
 use strict;
 use warnings;
 no warnings 'syntax';
 
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -151,11 +151,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::net -- provide regexes for IPv4, IPv6, and MAC addresses.
+Regex::Common::net -- provide regexes for IPv4, IPv6, and MAC addresses.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /net/;
+    use Regex::Common qw /net/;
 
     while (<>) {
         /$RE{net}{IPv4}/       and print "Dotted decimal IP address";
@@ -170,10 +170,10 @@ Regexp::Common::net -- provide regexes for IPv4, IPv6, and MAC addresses.
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 This modules gives you regular expressions for various style IPv4, IPv6,
 and MAC (or ethernet) addresses.
@@ -186,7 +186,7 @@ match C</$RE{net}{IPv4}/>, but this is because C<318.99.183.11> contains
 a valid IP address, namely C<18.99.183.11>. To prevent the unwanted
 matching, one needs to anchor the regexp: C</^$RE{net}{IPv4}$/>.
 
-For this pattern and the next four, under C<-keep> (See L<Regexp::Common>):
+For this pattern and the next four, under C<-keep> (See L<Regex::Common>):
 
 =over 4
 
@@ -258,7 +258,7 @@ By default I<P> is C<qr/[.]/>.
 Returns a pattern that matches a valid MAC or ethernet address as
 colon separated hexadecimals.
 
-For this pattern, and the next four, under C<-keep> (See L<Regexp::Common>):
+For this pattern, and the next four, under C<-keep> (See L<Regex::Common>):
 
 =over 4
 
@@ -403,7 +403,7 @@ April 1987.
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -429,7 +429,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

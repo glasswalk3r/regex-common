@@ -1,9 +1,9 @@
-package Regexp::Common::zip;
+package Regex::Common::zip;
 use strict;
 use warnings;
 no warnings 'syntax';
 
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -2576,11 +2576,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::zip -- provide regexes for postal codes.
+Regex::Common::zip -- provide regexes for postal codes.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /zip/;
+    use Regex::Common qw /zip/;
 
     while (<>) {
         /^$RE{zip}{Netherlands}$/   and  print "Dutch postal code\n";
@@ -2589,10 +2589,10 @@ Regexp::Common::zip -- provide regexes for postal codes.
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 This module offers patterns for zip or postal codes of many different
 countries. They all have the form C<$RE{zip}{Country}[{options}]>.
@@ -2668,7 +2668,7 @@ solid evidence the leading 0 is optional. So, we now require there
 always to be four digit -- unless the C<< {-lax} >> option is given,
 then a possibly leading 0 is optional.
 
-Regexp::Common 2.107 and before used C<$RE{zip}{Australian}>. This is
+Regex::Common 2.107 and before used C<$RE{zip}{Australian}>. This is
 still supported.
 
 If C<{-keep}> is used, the following variables will be set:
@@ -2780,7 +2780,7 @@ Returns a pattern that recognizes French postal codes. French postal
 codes consist of five numbers; the first two numbers, which range
 from '01' to '98', indicate the department. The (optional) country
 prefixes are I<FR> (ISO country code) and I<F> (CEPT code).
-Regexp::Common 2.107 and before used C<$RE{zip}{French}>. This is
+Regex::Common 2.107 and before used C<$RE{zip}{French}>. This is
 still supported.
 
 Monaco uses postal codes which are part of the numbering system used
@@ -2812,7 +2812,7 @@ codes consist of five numbers; the first two numbers indicating a
 wider postal area, the last three digits a postal district.
 The (optional) country prefixes are I<DE> (ISO country code) and
 I<D> (CEPT code).
-Regexp::Common 2.107 and before used C<$RE{zip}{German}>. This is
+Regex::Common 2.107 and before used C<$RE{zip}{German}>. This is
 still supported.
 
 If C<{-keep}> is used, the following variables will be set:
@@ -2957,7 +2957,7 @@ Returns a pattern that recognizes Dutch postal codes. Dutch postal
 codes consist of 4 digits and 2 letters, separated by a space.
 The separator can be changed using the C<{-sep}> option, as discussed
 above. The (optional) country prefix is I<NL>, which is both the
-ISO country code and the CEPT code. Regexp::Common 2.107 and earlier
+ISO country code and the CEPT code. Regex::Common 2.107 and earlier
 used C<$RE{zip}{Dutch}>. This is still supported.
 
 If C<{-keep}> is used, the following variables will be set:
@@ -3150,32 +3150,32 @@ The first 5 digits of the postal code.
 =item $5
 
 The first three digits of the postal code, indicating a sectional
-center or a large city. New in Regexp::Common 2.119.
+center or a large city. New in Regex::Common 2.119.
 
 =item $6
 
 The last 2 digits of the 5 digit part of the postal code, indicating
-a post office facility or delivery area. New in Regexp::Common 2.119.
+a post office facility or delivery area. New in Regex::Common 2.119.
 
 =item $7
 
 The separator between the 5 digit part and the 4 digit part. Up to
-Regexp::Common 2.118, this used to be $5.
+Regex::Common 2.118, this used to be $5.
 
 =item $8
 
-The 4 digit part of the postal code (if any). Up to Regexp::Common 2.118,
+The 4 digit part of the postal code (if any). Up to Regex::Common 2.118,
 this used to be $6.
 
 =item $9
 
 The first two digits of the 4 digit part of the postal code, indicating
-a sector, or several blocks. New in Regexp::Common 2.119.
+a sector, or several blocks. New in Regex::Common 2.119.
 
 =item $10
 
 The last two digits of the 4 digit part of the postal code, indicating
-a segment or one side of a street. New in Regexp::Common 2.119.
+a segment or one side of a street. New in Regex::Common 2.119.
 
 =back
 
@@ -3229,7 +3229,7 @@ The country prefix for Vatican City is C<< VA >>.
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =over 4
 
@@ -3293,7 +3293,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 =cut

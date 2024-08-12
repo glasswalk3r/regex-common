@@ -1,4 +1,4 @@
-package Regexp::Common;
+package Regex::Common;
 use strict;
 use warnings;
 no warnings 'syntax';
@@ -35,7 +35,7 @@ sub FETCH {
     return bless ref($self)->new( @$self, $extra ), ref($self);
 }
 
-my %imports = map { $_ => "Regexp::Common::$_" }
+my %imports = map { $_ => "Regex::Common::$_" }
   qw /balanced CC     comment   delimited lingua list
   net      number profanity SEN       URI    whitespace
   zip/;
@@ -80,9 +80,9 @@ sub import {
 
         # As a last resort, try to load the argument.
         my $module =
-            $entry =~ /^Regexp::Common/
+            $entry =~ /^Regex::Common/
           ? $entry
-          : "Regexp::Common::" . $entry;
+          : "Regex::Common::" . $entry;
         eval "require $module;";
         die $@ if $@;
     }
@@ -206,7 +206,7 @@ sub pattern {
         version => $spec{version},
         default => \%default,
       },
-      'Regexp::Common::Entry';
+      'Regex::Common::Entry';
 
     foreach (@nonflags) { s/\W/X/g }
     my $subname = "RE_" . join( "_", @nonflags );
@@ -239,7 +239,7 @@ sub subs {
     return $str;
 }
 
-package Regexp::Common::Entry;
+package Regex::Common::Entry;
 
 # use Carp;
 
@@ -270,13 +270,13 @@ __END__
 
 =head1 NAME
 
-Regexp::Common - Provide commonly requested regular expressions
+Regex::Common - Provide commonly requested regular expressions
 
 =head1 SYNOPSIS
 
  # STANDARD USAGE
 
- use Regexp::Common;
+ use Regex::Common;
 
  while (<>) {
      /$RE{num}{real}/               and print q{a number};
@@ -289,7 +289,7 @@ Regexp::Common - Provide commonly requested regular expressions
 
  # SUBROUTINE-BASED INTERFACE
 
- use Regexp::Common 'RE_ALL';
+ use Regex::Common 'RE_ALL';
 
  while (<>) {
      $_ =~ RE_num_real()              and print q{a number};
@@ -312,7 +312,7 @@ Regexp::Common - Provide commonly requested regular expressions
 
  # ROLL-YOUR-OWN PATTERNS
 
- use Regexp::Common 'pattern';
+ use Regex::Common 'pattern';
 
  pattern name   => ['name', 'mine'],
          create => '(?i:J[.]?\s+A[.]?\s+Perl-Hacker)',
@@ -340,9 +340,9 @@ Regexp::Common - Provide commonly requested regular expressions
 
  # DECIDING WHICH PATTERNS TO LOAD.
 
- use Regexp::Common qw /comment number/;  # Comment and number patterns.
- use Regexp::Common qw /no_defaults/;     # Don't load any patterns.
- use Regexp::Common qw /!delimited/;      # All, but delimited patterns.
+ use Regex::Common qw /comment number/;  # Comment and number patterns.
+ use Regex::Common qw /no_defaults/;     # Don't load any patterns.
+ use Regex::Common qw /!delimited/;      # All, but delimited patterns.
 
 
 =head1 DESCRIPTION
@@ -471,7 +471,7 @@ The more adept use:
 
         ($changed = $original) =~ s/$RE{some}{pattern}/$replacement/;
 
-Regexp::Common allows you do write this:
+Regex::Common allows you do write this:
 
         $changed = $RE{some}{pattern}->subs($original=>$replacement);
 
@@ -507,9 +507,9 @@ effortlessly interpolated, and because it also allows them to be
         my $duodecimal = $num->{-base=>12};
 
 
-However, the use of tied hashes does make the access to Regexp::Common
+However, the use of tied hashes does make the access to Regex::Common
 patterns slower than it might otherwise be. In contexts where impatience
-overrules laziness, Regexp::Common provides an additional
+overrules laziness, Regex::Common provides an additional
 subroutine-based interface.
 
 For each (sub-)entry in the C<%RE> hash (C<$RE{key1}{key2}{etc}>), there
@@ -518,7 +518,7 @@ each subroutine is the underscore-separated concatenation of the I<non-flag>
 keys that locate the same pattern in C<%RE>. Flags are passed to the subroutine
 in its argument list. Thus:
 
-        use Regexp::Common qw( RE_ws_crop RE_num_real RE_profanity );
+        use Regex::Common qw( RE_ws_crop RE_num_real RE_profanity );
 
         $str =~ RE_ws_crop() and die "Surrounded by whitespace";
 
@@ -534,11 +534,11 @@ in the previous section.
 
 It is also possible to export subroutines for all available patterns like so:
 
-        use Regexp::Common 'RE_ALL';
+        use Regex::Common 'RE_ALL';
 
 Or you can export all subroutines with a common prefix of keys like so:
 
-        use Regexp::Common 'RE_num_ALL';
+        use Regex::Common 'RE_num_ALL';
 
 which will export C<RE_num_int> and C<RE_num_real> (and if you have
 create more patterns who have first key I<num>, those will be exported
@@ -608,7 +608,7 @@ C<-keep> flag). To specify such "optional" capturing parentheses within
 the regular expression associated with C<create>, use the notation
 C<(?k:...)>. Any parentheses of this type will be converted to C<(...)>
 when the C<-keep> flag is specified, or C<(?:...)> when it is not.
-It is a Regexp::Common convention that the outermost capturing parentheses
+It is a Regex::Common convention that the outermost capturing parentheses
 always capture the entire pattern, but this is not enforced.
 
 
@@ -678,15 +678,15 @@ is the C<pattern()> subroutine.
 
 Examples:
 
- use Regexp::Common qw /comment number/;  # Comment and number patterns.
- use Regexp::Common qw /no_defaults/;     # Don't load any patterns.
- use Regexp::Common qw /!delimited/;      # All, but delimited patterns.
+ use Regex::Common qw /comment number/;  # Comment and number patterns.
+ use Regex::Common qw /no_defaults/;     # Don't load any patterns.
+ use Regex::Common qw /!delimited/;      # All, but delimited patterns.
 
 It's also possible to load your own set of patterns. If you have a
-module C<Regexp::Common::my_patterns> that makes patterns available,
+module C<Regex::Common::my_patterns> that makes patterns available,
 you can have it made available with
 
- use Regexp::Common qw /my_patterns/;
+ use Regex::Common qw /my_patterns/;
 
 Note that the default patterns will still be made available - only if
 you use I<no_defaults>, or mention one of the default sets explicitly,
@@ -696,51 +696,51 @@ the non mentioned defaults aren't made available.
 
 The patterns listed below are currently available. Each set of patterns
 has its own manual page describing the details. For each pattern set
-named I<name>, the manual page I<Regexp::Common::name> describes the
+named I<name>, the manual page I<Regex::Common::name> describes the
 details.
 
 Currently available are:
 
 =over 4
 
-=item Regexp::Common::balanced
+=item Regex::Common::balanced
 
 Provides regexes for strings with balanced parenthesized delimiters.
 
-=item Regexp::Common::comment
+=item Regex::Common::comment
 
 Provides regexes for comments of various languages (43 languages
 currently).
 
-=item Regexp::Common::delimited
+=item Regex::Common::delimited
 
 Provides regexes for delimited strings.
 
-=item Regexp::Common::lingua
+=item Regex::Common::lingua
 
 Provides regexes for palindromes.
 
-=item Regexp::Common::list
+=item Regex::Common::list
 
 Provides regexes for lists.
 
-=item Regexp::Common::net
+=item Regex::Common::net
 
 Provides regexes for IPv4, IPv6, and MAC addresses.
 
-=item Regexp::Common::number
+=item Regex::Common::number
 
 Provides regexes for numbers (integers and reals).
 
-=item Regexp::Common::profanity
+=item Regex::Common::profanity
 
 Provides regexes for profanity.
 
-=item Regexp::Common::whitespace
+=item Regex::Common::whitespace
 
 Provides regexes for leading and trailing whitespace.
 
-=item Regexp::Common::zip
+=item Regex::Common::zip
 
 Provides regexes for zip codes.
 
@@ -778,7 +778,7 @@ Often caused by a spelling mistake or an incompletely specified name.
 
 =item C<Can't create unknown regex: $RE{...}>
 
-Regexp::Common doesn't have a generator for the requested pattern.
+Regex::Common doesn't have a generator for the requested pattern.
 Often indicates a misspelt or missing parameter.
 
 =item
@@ -863,7 +863,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

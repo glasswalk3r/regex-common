@@ -1,9 +1,9 @@
-package Regexp::Common::delimited;
+package Regex::Common::delimited;
 use strict;
 use warnings;
 no warnings 'syntax';
 
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 use charnames ':full';
 
@@ -228,11 +228,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::delimited -- provides a regex for delimited strings
+Regex::Common::delimited -- provides a regex for delimited strings
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /delimited/;
+    use Regex::Common qw /delimited/;
 
     while (<>) {
         /$RE{delimited}{-delim=>'"'}/  and print 'a \" delimited string';
@@ -242,10 +242,10 @@ Regexp::Common::delimited -- provides a regex for delimited strings
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 =head2 C<$RE{delimited}{-delim}{-cdelim}{-esc}>
 
@@ -277,7 +277,7 @@ For example:
    $RE{delimited}{-delim=>q{'"}}             # match "string" or 'string'
    $RE{delimited}{-delim=>"("}{-cdelim=>")"} # match (string)
 
-Under C<-keep> (See L<Regexp::Common>):
+Under C<-keep> (See L<Regex::Common>):
 
 =over 4
 
@@ -322,7 +322,7 @@ In a future update, pairs may be added (or deleted).
 This pattern requires perl 5.14.0 or higher.
 
 For a full list of bracket pairs, inspect the output of
-C<< Regexp::Common::delimited::bracket_pair () >>, which returns
+C<< Regex::Common::delimited::bracket_pair () >>, which returns
 a list of two element arrays, each holding the Unicode names of
 matching pair of delimiters.
 
@@ -352,7 +352,7 @@ captures the closing delimiter
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -378,7 +378,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

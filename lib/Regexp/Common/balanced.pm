@@ -1,10 +1,10 @@
-package Regexp::Common::balanced;
+package Regex::Common::balanced;
 {
     use strict;
     use warnings;
     no warnings 'syntax';
 
-    use Regexp::Common qw /pattern clean no_defaults/;
+    use Regex::Common qw /pattern clean no_defaults/;
 
     # VERSION
 
@@ -82,12 +82,12 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::balanced -- provide regexes for strings with balanced
+Regex::Common::balanced -- provide regexes for strings with balanced
 parenthesized delimiters or arbitrary delimiters.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /balanced/;
+    use Regex::Common qw /balanced/;
 
     while (<>) {
         /$RE{balanced}{-parens=>'()'}/
@@ -97,10 +97,10 @@ parenthesized delimiters or arbitrary delimiters.
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 =head2 C<$RE{balanced}{-parens}>
 
@@ -147,7 +147,7 @@ This fixes an problem that was introduced in the 5.17 development track.
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -173,7 +173,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

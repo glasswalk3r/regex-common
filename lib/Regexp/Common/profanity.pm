@@ -1,9 +1,9 @@
-package Regexp::Common::profanity;
+package Regex::Common::profanity;
 use strict;
 use warnings;
 no warnings 'syntax';
 
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -33,11 +33,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::profanity -- provide regexes for profanity
+Regex::Common::profanity -- provide regexes for profanity
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /profanity/;
+    use Regex::Common qw /profanity/;
 
     while (<>) {
         /$RE{profanity}/               and  print "Contains profanity\n";
@@ -46,10 +46,10 @@ Regexp::Common::profanity -- provide regexes for profanity
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 =head2 $RE{profanity}
 
@@ -57,7 +57,7 @@ Returns a pattern matching words -- such as Carlin's "big seven" -- that
 are most likely to give offense. Note that correct anatomical terms are
 deliberately I<not> included in the list.
 
-Under C<-keep> (see L<Regexp::Common>):
+Under C<-keep> (see L<Regex::Common>):
 
 =over 4
 
@@ -73,7 +73,7 @@ Returns a pattern matching words that are likely to give offense when
 used in specific contexts, but which also have genuinely
 non-offensive meanings.
 
-Under C<-keep> (see L<Regexp::Common>):
+Under C<-keep> (see L<Regex::Common>):
 
 =over 4
 
@@ -85,7 +85,7 @@ captures the entire word
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -111,7 +111,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

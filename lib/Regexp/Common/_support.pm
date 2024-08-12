@@ -1,4 +1,4 @@
-package Regexp::Common::_support;
+package Regex::Common::_support;
 use strict;
 use warnings;
 no warnings 'syntax';
@@ -41,18 +41,18 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::support -- Support functions for Regexp::Common.
+Regex::Common::support -- Support functions for Regex::Common.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common::_support qw /luhn/;
+    use Regex::Common::_support qw /luhn/;
 
     luhn ($number)    # Returns true/false.
 
 
 =head1 DESCRIPTION
 
-This module contains some subroutines to be used by other C<Regexp::Common>
+This module contains some subroutines to be used by other C<Regex::Common>
 modules. It's not intended to be used directly. Subroutines from the
 module may disappear without any notice, or their meaning or interface
 may change without notice.
@@ -93,7 +93,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

@@ -1,9 +1,9 @@
-package Regexp::Common::comment;
+package Regex::Common::comment;
 use strict;
 use warnings;
 no warnings 'syntax';
 
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -241,7 +241,7 @@ sub nested {
     my ( $begin, $end ) = @_;
 
     $count++;
-    my $r = '(??{$Regexp::Common::comment [' . $count . ']})';
+    my $r = '(??{$Regex::Common::comment [' . $count . ']})';
 
     my $qb = quotemeta $begin;
     my $qe = quotemeta $end;
@@ -266,7 +266,7 @@ sub nested {
         $re = qr /(?:$qb(?:@clauses)*$qe)/;
     }
 
-    $Regexp::Common::comment[$count] = qr/$re/;
+    $Regex::Common::comment[$count] = qr/$re/;
 }
 
 #
@@ -355,7 +355,7 @@ pattern
 #
 # Scores of less than 5 or above 17....
 # http://www.cliff.biffle.org/esoterica/beatnik.html
-@Regexp::Common::comment::scores = (
+@Regex::Common::comment::scores = (
     1, 3, 3,  2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1,
     1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10
 );
@@ -367,7 +367,7 @@ pattern
         use re 'eval';
         my $re = qr {\b([A-Za-z]+)\b
                          (?(?{($s, $x) = (0, lc $^N);
-                              $s += $Regexp::Common::comment::scores
+                              $s += $Regex::Common::comment::scores
                                     [ord (chop $x) - ord ('a')] while length $x;
                               $s  >= 5 && $s < 18})XXX|)}x;
         $re;
@@ -399,11 +399,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::comment -- provide regexes for comments.
+Regex::Common::comment -- provide regexes for comments.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /comment/;
+    use Regex::Common qw /comment/;
 
     while (<>) {
         /$RE{comment}{C}/       and  print "Contains a C comment\n";
@@ -415,7 +415,7 @@ Regexp::Common::comment -- provide regexes for comments.
         /$RE{comment}{HTML}/    and  print "Contains an HTML comment\n";
     }
 
-    use Regexp::Common qw /comment RE_comment_HTML/;
+    use Regex::Common qw /comment RE_comment_HTML/;
 
     while (<>) {
         $_ =~ RE_comment_HTML() and  print "Contains an HTML comment\n";
@@ -423,10 +423,10 @@ Regexp::Common::comment -- provide regexes for comments.
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 This modules gives you regular expressions for comments in various
 languages.
@@ -1071,7 +1071,7 @@ Press. B<1990>. ISBN 0-19-853737-9. Ch. 10.3, pp 390-391.
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -1097,7 +1097,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

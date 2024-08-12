@@ -1,9 +1,9 @@
-package Regexp::Common::list;
+package Regex::Common::list;
 use strict;
 use warnings;
 no warnings 'syntax';
 
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -46,11 +46,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::list -- provide regexes for lists
+Regex::Common::list -- provide regexes for lists
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /list/;
+    use Regex::Common qw /list/;
 
     while (<>) {
         /$RE{list}{-pat => '\w+'}/          and print "List of words";
@@ -60,17 +60,17 @@ Regexp::Common::list -- provide regexes for lists
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 =head2 C<$RE{list}{-pat}{-sep}{-lastsep}>
 
 Returns a pattern matching a list of (at least two) substrings.
 
 If C<-pat=I<P>> is specified, it defines the pattern for each substring
-in the list. By default, I<P> is C<qr/.*?\S/>. In Regexp::Common 0.02
+in the list. By default, I<P> is C<qr/.*?\S/>. In Regex::Common 0.02
 or earlier, the default pattern was C<qr/.*?/>. But that will match
 a single space, causing unintended parsing of C<a, b, and c> as a
 list of four elements instead of 3 (with C<-word> being C<(?:and)>).
@@ -128,7 +128,7 @@ An alias for C<< $RE{list}{conj}{-word=>'or'} >>
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -154,7 +154,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

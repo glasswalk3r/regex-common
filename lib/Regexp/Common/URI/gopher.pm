@@ -1,10 +1,10 @@
-package Regexp::Common::URI::gopher;
+package Regex::Common::URI::gopher;
 use strict;
 use warnings;
-use Regexp::Common               qw /pattern clean no_defaults/;
-use Regexp::Common::URI          qw /register_uri/;
-use Regexp::Common::URI::RFC1738 qw /$host $port $uchars/;
-use Regexp::Common::URI::RFC1808 qw /$pchars $pchar_range/;
+use Regex::Common               qw /pattern clean no_defaults/;
+use Regex::Common::URI          qw /register_uri/;
+use Regex::Common::URI::RFC1738 qw /$host $port $uchars/;
+use Regex::Common::URI::RFC1808 qw /$pchars $pchar_range/;
 
 # VERSION
 
@@ -44,11 +44,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::URI::gopher -- Returns a pattern for gopher URIs.
+Regex::Common::URI::gopher -- Returns a pattern for gopher URIs.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /URI/;
+    use Regex::Common qw /URI/;
 
     while (<>) {
         /$RE{URI}{gopher}/       and  print "Contains a gopher URI.\n";
@@ -149,7 +149,7 @@ Internet draft I<draft-murali-url-gopher>. December 1996.
 
 =head1 SEE ALSO
 
-L<Regexp::Common::URI> for other supported URIs.
+L<Regex::Common::URI> for other supported URIs.
 
 =head1 AUTHOR
 
@@ -175,7 +175,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

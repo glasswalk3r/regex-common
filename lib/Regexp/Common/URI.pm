@@ -1,4 +1,4 @@
-package Regexp::Common::URI;
+package Regex::Common::URI;
 use strict;
 use warnings;
 no warnings 'syntax';
@@ -8,7 +8,7 @@ use Exporter ();
 our @ISA       = qw /Exporter/;
 our @EXPORT_OK = qw /register_uri/;
 
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -17,7 +17,7 @@ use Regexp::Common qw /pattern clean no_defaults/;
 # lines. The eval is further explained in 'perldoc -f require'.
 my @uris = qw /fax file ftp gopher http pop prospero news tel telnet tv wais/;
 foreach my $uri (@uris) {
-    eval "require Regexp::Common::URI::$uri";
+    eval "require Regex::Common::URI::$uri";
     die $@ if $@;
 }
 
@@ -45,11 +45,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::URI -- provide patterns for URIs.
+Regex::Common::URI -- provide patterns for URIs.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /URI/;
+    use Regex::Common qw /URI/;
 
     while (<>) {
         /$RE{URI}{HTTP}/       and  print "Contains an HTTP URI.\n";
@@ -59,9 +59,9 @@ Regexp::Common::URI -- provide patterns for URIs.
 
 Patterns for the following URIs are supported: fax, file, FTP, gopher,
 HTTP, news, NTTP, pop, prospero, tel, telnet, tv and WAIS.
-Each is documented in the I<Regexp::Common::URI::B<scheme>>,
+Each is documented in the I<Regex::Common::URI::B<scheme>>,
 manual page, for the appropriate scheme (in lowercase), except for
-I<NNTP> URIs which are found in I<Regexp::Common::URI::news>.
+I<NNTP> URIs which are found in I<Regex::Common::URI::news>.
 
 =head2 C<$RE{URI}>
 
@@ -110,7 +110,7 @@ Vaha-Sipila, A.: I<URLs for Telephone Calls>. April 2000.
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -136,7 +136,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

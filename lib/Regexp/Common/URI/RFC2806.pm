@@ -1,8 +1,8 @@
-package Regexp::Common::URI::RFC2806;
+package Regex::Common::URI::RFC2806;
 use strict;
 use warnings;
-use Regexp::Common::URI::RFC1035 qw /$domain/;
-use Regexp::Common::URI::RFC2396 qw /$unreserved $escaped $hex/;
+use Regex::Common::URI::RFC1035 qw /$domain/;
+use Regex::Common::URI::RFC2396 qw /$unreserved $escaped $hex/;
 
 # VERSION
 
@@ -150,16 +150,16 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::URI::RFC2806 -- Definitions from RFC2806;
+Regex::Common::URI::RFC2806 -- Definitions from RFC2806;
 
 =head1 SYNOPSIS
 
-    use Regexp::Common::URI::RFC2806 qw /:ALL/;
+    use Regex::Common::URI::RFC2806 qw /:ALL/;
 
 =head1 DESCRIPTION
 
 This package exports definitions from RFC2806. It's intended
-usage is for Regexp::Common::URI submodules only. Its interface
+usage is for Regex::Common::URI submodules only. Its interface
 might change without notice.
 
 =head1 REFERENCES
@@ -198,7 +198,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

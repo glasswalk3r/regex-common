@@ -1,10 +1,10 @@
-package Regexp::Common::CC;
+package Regex::Common::CC;
 use strict;
 use warnings;
 no warnings 'syntax';
 
-use Regexp::Common           qw /pattern clean no_defaults/;
-use Regexp::Common::_support qw /luhn/;
+use Regex::Common           qw /pattern clean no_defaults/;
+use Regex::Common::_support qw /luhn/;
 
 # VERSION
 
@@ -36,7 +36,7 @@ foreach my $card (@cards) {
       create => sub {
         use re 'eval';
         qr <((?=($prefix))[0-9]{$length})
-                    (?(?{Regexp::Common::_support::luhn $1})|(?!))>x
+                    (?(?{Regex::Common::_support::luhn $1})|(?!))>x
       };
 }
 
@@ -48,11 +48,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::CC -- provide patterns for credit card numbers.
+Regex::Common::CC -- provide patterns for credit card numbers.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /CC/;
+    use Regex::Common qw /CC/;
 
     while (<>) {
         /^$RE{CC}{Mastercard}$/   and  print "Mastercard card number\n";
@@ -60,10 +60,10 @@ Regexp::Common::CC -- provide patterns for credit card numbers.
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 This module offers patterns for credit card numbers of several major
 credit card types. Currently, the supported cards are: I<Mastercard>,
@@ -72,7 +72,7 @@ I<Amex>, I<Diners Club>, and I<Discover>.
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =over 4
 
@@ -114,7 +114,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

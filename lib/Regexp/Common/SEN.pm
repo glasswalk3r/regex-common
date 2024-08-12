@@ -1,9 +1,9 @@
-package Regexp::Common::SEN;
+package Regex::Common::SEN;
 use strict;
 use warnings;
 no warnings 'syntax';
 
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -59,11 +59,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::SEN -- provide regexes for Social-Economical Numbers.
+Regex::Common::SEN -- provide regexes for Social-Economical Numbers.
 
 =head1 SYNOPSIS
 
- use Regexp::Common qw /SEN/;
+ use Regex::Common qw /SEN/;
 
  while (<>) {
      /^$RE{SEN}{USA}{SSN}$/    and  print "Social Security Number\n";
@@ -72,10 +72,10 @@ Regexp::Common::SEN -- provide regexes for Social-Economical Numbers.
 
 =head1 DESCRIPTION
 
-Please consult the manual of L<Regexp::Common> for a general description
+Please consult the manual of L<Regex::Common> for a general description
 of the works of this interface.
 
-Do not use this module directly, but load it via I<Regexp::Common>.
+Do not use this module directly, but load it via I<Regex::Common>.
 
 =head2 C<$RE{SEN}{USA}{SSN}{-sep}>
 
@@ -89,7 +89,7 @@ in the future. There are almost a billion possible SSNs, and about
 If C<-sep=I<P>> is specified, the pattern I<P> is used as the
 separator between the groups of numbers.
 
-Under C<-keep> (see L<Regexp::Common>):
+Under C<-keep> (see L<Regex::Common>):
 
 =over 4
 
@@ -113,7 +113,7 @@ captures the third group of digits (the serial number).
 
 =head1 SEE ALSO
 
-L<Regexp::Common> for a general description of how to use this interface.
+L<Regex::Common> for a general description of how to use this interface.
 
 =head1 AUTHOR
 
@@ -139,7 +139,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

@@ -1,7 +1,7 @@
-package Regexp::Common::URI::RFC2396;
+package Regex::Common::URI::RFC2396;
 use strict;
 use warnings;
-use Regexp::Common qw /pattern clean no_defaults/;
+use Regex::Common qw /pattern clean no_defaults/;
 
 # VERSION
 
@@ -107,16 +107,16 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::URI::RFC2396 -- Definitions from RFC2396;
+Regex::Common::URI::RFC2396 -- Definitions from RFC2396;
 
 =head1 SYNOPSIS
 
-    use Regexp::Common::URI::RFC2396 qw /:ALL/;
+    use Regex::Common::URI::RFC2396 qw /:ALL/;
 
 =head1 DESCRIPTION
 
 This package exports definitions from RFC2396. It's intended
-usage is for Regexp::Common::URI submodules only. Its interface
+usage is for Regex::Common::URI submodules only. Its interface
 might change without notice.
 
 =head1 REFERENCES
@@ -154,7 +154,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 

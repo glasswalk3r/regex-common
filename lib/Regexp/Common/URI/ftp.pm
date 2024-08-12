@@ -1,9 +1,9 @@
-package Regexp::Common::URI::ftp;
+package Regex::Common::URI::ftp;
 use strict;
 use warnings;
-use Regexp::Common               qw /pattern clean no_defaults/;
-use Regexp::Common::URI          qw /register_uri/;
-use Regexp::Common::URI::RFC2396 qw /$host $port $ftp_segments $userinfo
+use Regex::Common               qw /pattern clean no_defaults/;
+use Regex::Common::URI          qw /register_uri/;
+use Regex::Common::URI::RFC2396 qw /$host $port $ftp_segments $userinfo
   $userinfo_no_colon/;
 
 # VERSION
@@ -41,11 +41,11 @@ __END__
 
 =head1 NAME
 
-Regexp::Common::URI::ftp -- Returns a pattern for FTP URIs.
+Regex::Common::URI::ftp -- Returns a pattern for FTP URIs.
 
 =head1 SYNOPSIS
 
-    use Regexp::Common qw /URI/;
+    use Regex::Common qw /URI/;
 
     while (<>) {
         /$RE{URI}{FTP}/       and  print "Contains an FTP URI.\n";
@@ -174,7 +174,7 @@ Identifiers (URI): Generic Syntax>. August 1998.
 
 =head1 SEE ALSO
 
-L<Regexp::Common::URI> for other supported URIs.
+L<Regex::Common::URI> for other supported URIs.
 
 =head1 AUTHOR
 
@@ -200,7 +200,7 @@ details.
 You should have received a copy of the GNU General Public License along with
 regex-common. If not, see (http://www.gnu.org/licenses/).
 
-The original project [Regexp::Common](https://metacpan.org/pod/Regexp::Common)
+The original project [Regex::Common](https://metacpan.org/pod/Regex::Common)
 is licensed through the MIT License, copyright (c) Damian Conway
 (damian@cs.monash.edu.au) and Abigail (regexp-common@abigail.be).
 
